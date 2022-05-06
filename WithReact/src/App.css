@@ -1,0 +1,15 @@
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+thead {
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+tbody td {
+  text-align: center;
+}
+div {
+  margin: 1rem;
+}
