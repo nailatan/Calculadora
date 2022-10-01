@@ -11,27 +11,32 @@ function CreateTables() {
 function createTable(num) {
   const a = "table_{num}";
   return (
-    <div id={"div_"+num}>
-    <table>
-      <thead>
-        <tr>
-          <td>Tabla del {num}</td>
-        </tr>
-      </thead>
-      <tbody>
-        {createTableBody(num)}
-      </tbody>
-    </table>
+    <div
+      id={"div_" + num}
+      key={"div_" + num}
+    >
+      <table>
+        <thead>
+          <tr>
+            <td>Tabla del {num}</td>
+          </tr>
+        </thead>
+        <tbody>{createTableBody(num)}</tbody>
+      </table>
     </div>
-    );
+  );
 }
 
 function createTableBody(num) {
-  return  numbers.map((elem)=> {
-  return (<tr>
-    <td>{num} &times; {elem} = {num*elem}</td>
-  </tr>);
-  })
+  return numbers.map((elem) => {
+    return (
+      <tr key={`tr_${num}_${elem}`}>
+        <td key={`td_${num}_${elem}`}>
+          {num} &times; {elem} = {num * elem}
+        </td>
+      </tr>
+    );
+  });
 }
 
 export default CreateTables
